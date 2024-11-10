@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://dn2gn0n4637i7"]
+
+[ext_resource type="Texture2D" uid="uid://c86skdn4d8jxb" path="res://data/imagen/putty.png" id="1_adb20"]
+[ext_resource type="Script" path="res://data/scripts/settingsPopup.gd" id="2_4f61h"]
+[ext_resource type="Script" path="res://data/scripts/camera_2d.gd" id="2_7vesf"]
+[ext_resource type="Script" path="res://scene/chatter_box.gd" id="2_royyd"]
+[ext_resource type="Script" path="res://data/scripts/scene_setter.gd" id="3_2ffm2"]
+[ext_resource type="Script" path="res://scene/window_mover.gd" id="4_wv162"]
+[ext_resource type="Script" path="res://data/scripts/sfx.gd" id="7_spkix"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Putty" type="Sprite2D" parent="."]
+texture = ExtResource("1_adb20")
+
+[node name="RandomEvents" type="Node" parent="Putty"]
+
+[node name="ChatterBox" type="Node2D" parent="Putty/RandomEvents"]
+script = ExtResource("2_royyd")
+
+[node name="stream" type="AudioStreamPlayer2D" parent="Putty/RandomEvents/ChatterBox"]
+
+[node name="Meta" type="Node" parent="Putty"]
+
+[node name="Active" type="Node" parent="Putty"]
+
+[node name="GuiHandler" type="Node2D" parent="Putty/Active"]
+script = ExtResource("2_4f61h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_7vesf")
+
+[node name="SceneSetter" type="Node2D" parent="."]
+script = ExtResource("3_2ffm2")
+
+[node name="WindowMover" type="Node2D" parent="."]
+script = ExtResource("4_wv162")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("7_spkix")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]

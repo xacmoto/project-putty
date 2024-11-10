@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://civowgai05opj"]
+
+[ext_resource type="Script" path="res://data/scripts/color_rect.gd" id="1_akxv6"]
+[ext_resource type="FontFile" uid="uid://csatjubeq1nfe" path="res://data/assets/COMIC.TTF" id="2_0ba2u"]
+[ext_resource type="Script" path="res://data/scripts/handler.gd" id="3_f8q6a"]
+
+[node name="RcGui" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+clip_contents = true
+offset_right = 42.0
+offset_bottom = 97.0
+color = Color(0.43, 0.43, 0.43, 0.423529)
+script = ExtResource("1_akxv6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("2_0ba2u")
+text = "You're very funny."
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("2_0ba2u")
+text = "And very smart."
+fit_content = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("2_0ba2u")
+text = "And very capable."
+fit_content = true
+
+[node name="Handler" type="Node2D" parent="."]
+position = Vector2(45, 30)
+script = ExtResource("3_f8q6a")
